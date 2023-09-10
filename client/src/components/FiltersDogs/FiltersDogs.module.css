@@ -1,0 +1,76 @@
+.filtersContainerDogs {
+    display: flex;
+    flex-direction: row;
+    gap: 1em;
+    justify-content: center;
+}
+
+.title {
+    font-family: Arial Black; 
+font-weight: bold; font-size: 2em;         
+background: #f0f006; 
+-webkit-background-clip: text; 
+-moz-background-clip: text; 
+background-clip: text; 
+color: transparent; 
+text-shadow: 0px 3px 3px rgba(255,255,255,0.4),0px -1px 1px rgba(0,0,0,0.3);
+  }
+
+.section {
+    display: flex;
+    flex-direction:row;
+    flex-wrap: wrap;
+    justify-content:space-between;
+    align-items: center;
+    margin: 4px;
+    padding: 6px;
+    border: 1px solid white;
+    border-radius: 15px;
+    gap: 5px;
+    box-shadow: 6px 7px 8px -6px rgba(69, 69, 69, 0.7);
+    width: 70%;
+    backdrop-filter: blur(7px);
+}
+
+.select {
+    appearance: none; /* Elimina el estilo nativo del sistema operativo */
+    padding: 5px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background: linear-gradient(to right,#dae307 ,#a0e033);
+    background-color: #dae307;
+    width: 20%;
+    cursor: pointer;
+    font-family: Trebuchet MS;
+}
+
+.select option {
+    padding: 10px;
+    font-size: 16px;
+    background-color: #fff;
+    font-family: Trebuchet MS;
+}
+
+.button {
+    background: linear-gradient(to right,#dae307 ,#a0e033);
+ background-color: #dae307;
+ color: #080808;
+ font-family: Trebuchet MS;
+ font-size: 15px;
+ font-weight: 800;
+ font-style: normal;
+ text-decoration: none;
+ padding: 7px 7px;
+ border: 0px solid #000;
+ border-radius: 21px;
+ display: inline-block;
+ box-shadow: 0px 0px 10px 0px #2D2D2D;
+ margin-right: 15px;
+ cursor: grab;
+}
+
+.buttonsContainer {
+    justify-content: space-between;
+    margin: 5px;
+}

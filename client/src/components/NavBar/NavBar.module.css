@@ -1,0 +1,139 @@
+* {
+	box-sizing: border-box;
+}
+body {
+	/* line-height: 1.6; */
+	margin: 0;
+	min-height: 100vh;
+}
+ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+
+h2,
+h3,
+a {
+	color: #34495e;
+}
+
+a {
+	text-decoration: none;
+}
+
+
+
+.logo {
+	font-family: Arial Black; 
+font-weight: bold; font-size: 2em;         
+background: #202020; 
+-webkit-background-clip: text; 
+-moz-background-clip: text; 
+background-clip: text; 
+color: transparent; 
+text-shadow: 0px 3px 3px rgba(255,255,255,0.4),0px -1px 1px rgba(0,0,0,0.3);
+}
+
+.mainNav {
+	font-family: Arial Black; 
+font-weight: bold; font-size: 1.5em;         
+background: #202020; 
+-webkit-background-clip: text; 
+-moz-background-clip: text; 
+background-clip: text; 
+color: transparent; 
+text-shadow: 0px 3px 3px rgba(255,255,255,0.4),0px -1px 1px rgba(0,0,0,0.3);
+
+}
+.logo a,
+.mainNav a {
+	padding: 1px 15px;
+	text-transform: uppercase;
+	text-align: center;
+	display: block;
+}
+
+.mainNav a {
+	color: #34495e;
+	font-size: .99em;
+}
+
+.mainNav a:hover {
+	color: #718daa;
+}
+
+.mainContainer {
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 80px;
+	display: flex;
+	align-items: center;
+	transition: 0.3s ease-out;
+	backdrop-filter: blur(3px) brightness(1.2);
+	-webkit-backdrop-filter: blur(4px) brightness(1.2);
+	text-shadow: 0 0 5px rgba(0,0,0,0.5);
+	color: white;
+	font-size: 16px;
+	&.mask {
+	  top: 150px;
+	  mask-image: linear-gradient(black 70%, transparent);
+	  -webkit-mask-image: linear-gradient(black 70%, transparent);
+	  
+	}
+	&.mask-pattern {
+	  top: 300px;
+	  mask-image: url("data:image/svg+xml, %3Csvg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 12.21 10.57%27%3E%3Cpath fill=%27%23ffffff%27 d=%27M6.1 0h6.11L9.16 5.29 6.1 10.57 3.05 5.29 0 0h6.1z%27/%3E%3C/svg%3E"), linear-gradient(black calc(100% - 30px), transparent calc(100% - 30px));
+	  mask-size: auto 30px, 100% 100%;
+	  mask-repeat: repeat-x, no-repeat;
+	  mask-position: left bottom, top left;
+	  
+	  -webkit-mask-image: url("data:image/svg+xml, %3Csvg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 12.21 10.57%27%3E%3Cpath fill=%27%23ffffff%27 d=%27M6.1 0h6.11L9.16 5.29 6.1 10.57 3.05 5.29 0 0h6.1z%27/%3E%3C/svg%3E"), linear-gradient(black calc(100% - 30px), transparent calc(100% - 30px));
+	  -webkit-mask-size: auto 30px, 100% 100%;
+	  -webkit-mask-repeat: repeat-x, no-repeat;
+	  -webkit-mask-position: left bottom, top left;
+	}
+  
+	@media (min-width: 640px) {
+	  padding: 2px 30px 2px 30px;
+	}
+  }
+  .mainContainer.is-hidden {
+	transform: translateY(-100%);
+  }
+
+
+/* ================================= 
+  Media Queries
+==================================== */
+
+
+
+
+@media (min-width: 769px) {
+	.mainContainer,
+	.mainNav {
+		display: flex;
+	}
+	.mainContainer {
+		flex-direction: column;
+		align-items: center;
+    	.header{
+		width: 80%;
+		margin: 0 auto;
+		max-width: 1150px;
+	}
+	}
+
+}
+
+@media (min-width: 1025px) {
+	.mainContainer {
+		flex-direction: row;
+		justify-content: space-between;
+	}
+
+}

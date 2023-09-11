@@ -144,7 +144,7 @@ cursor:grab
   transform: scale(0.95);
 }
 .background {
-  background-image: url('/Users/macbook/Desktop/HENRY/PROYECTO INDIVIDUAL/PI-Dogs-main/client/src/utils/IMAGES/126-1261514_png-dog-paw-transparent-transparent-background-dog-paw.png');
+  background-image: url('/Users/macbook/Desktop/HENRY/ProyectoDogs/CLIENT/src/views/IMAGES/126-1261514_png-dog-paw-transparent-transparent-background-dog-paw.png');
   height: 100vh;
   background-repeat: no-repeat;
   background-size: contain;

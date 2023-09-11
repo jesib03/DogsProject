@@ -3,7 +3,7 @@ body, html {
     padding: 0;
 }
 .mainContainer {
-    background-image: url('/Users/macbook/Desktop/HENRY/PROYECTO INDIVIDUAL/PI-Dogs-main/client/src/utils/IMAGES/image-from-rawpixel-id-10172802-jpeg.jpeg');
+    background-image: url('/Users/macbook/Desktop/HENRY/ProyectoDogs/CLIENT/src/views/IMAGES/image-from-rawpixel-id-10172802-jpeg.jpeg');
     background-size:auto;
     min-height: 100vh;
     align-items: center;

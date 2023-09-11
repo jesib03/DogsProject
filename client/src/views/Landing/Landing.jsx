@@ -1,6 +1,6 @@
 import React from "react";
 import style from "./Landing.module.css";
-import backgroundImage from "/Users/macbook/Desktop/HENRY/PROYECTO INDIVIDUAL/PI-Dogs-main/client/src/views/Landing/backgrounddogs.png";
+import backgroundImage from "/Users/macbook/Desktop/HENRY/ProyectoDogs/CLIENT/src/views/Landing/backgrounddogs.png";
 import { Link } from "react-router-dom";
 
 function Landing() {

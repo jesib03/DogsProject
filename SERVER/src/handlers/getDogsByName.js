@@ -14,6 +14,8 @@ const getDogsByName = async (req, res) => {
   
       if (dogsNameByAPI && dogsNameByAPI.length > 0) {
         return res.status(200).json(dogsNameByAPI);
+      } else {
+        throw new Error("No dogs found");
       }
     } 
   } catch (error) {

@@ -1,13 +1,12 @@
-const { Temperament } = require('../../db');
+const { Temperament } = require("../../db");
 
-const keptTemperamentsInDB = async (name) => {
-    
-        const [temperament, created] = await Temperament.findOrCreate({
-          where: { name: name },
-          defaults: { name: name },
-        });
-        return created ? 'Temperament created' : 'Temperament already exists'
-      
-}
+const keptTemperamentsInDB = async (temperament) => {
+  const temperamentsCreated = await Temperament.bulkCreate(
+    temperament.map((name) => ({ name })),
+    { ignoreDuplicates: true }
+  );
+
+  return `Temperaments created: ${temperamentsCreated.length}`;
+};
 
 module.exports = keptTemperamentsInDB;

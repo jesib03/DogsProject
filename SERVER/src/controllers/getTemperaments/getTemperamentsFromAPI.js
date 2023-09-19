@@ -4,18 +4,25 @@ require("dotenv").config();
 const { URL, API_KEY } = process.env;
 
 const getTemperamentsFromAPI = async () => {
-    
-        const response = await axios(`${URL}?api_key=${API_KEY}`);
-        const dataTemperaments = response.data.map(t => t.temperament)
-        const temperamentString = dataTemperaments.join(","); // Aqui se transforma el array de temperamentos en un string separado por comas   
-        const temperamentsArray = temperamentString.split(","); // Aqui se transforma el string en un array separado por comas
-        // Elimino duplicados y valores nulos del array de temperamentos utilizando
-        //  un conjunto (Set). Este array resultante contendrá los temperamentos únicos y válidos.
-        const uniqueTemperaments = [
-          ...new Set(temperamentsArray.filter((item) => item !== null)),
-        ];
-        return !uniqueTemperaments ? 'Error fetching temperaments from API' : uniqueTemperaments; 
-}
+  const response = await axios(`${URL}?api_key=${API_KEY}`);
+  const dogData = response.data;
 
+  const temperamentsArray = [];
+  // Itera a través de los datos de perros y extrae los temperamentos de cada perro
+  dogData.forEach((dog) => {
+    const dogTemperament = dog.temperament;
+
+    if (dogTemperament) {
+      // Divide los temperamentos en un array y elimina los espacios en blanco
+      const temperaments = dogTemperament.split(",").map((t) => t.trim());
+      // Agrega los temperamentos al array principal
+      temperamentsArray.push(...temperaments);
+    }
+  });
+  // Elimina duplicados y valores nulos del array de temperamentos utilizando un conjunto (Set)
+  const uniqueTemperaments = [...new Set(temperamentsArray.filter(Boolean))];
+
+  return uniqueTemperaments;
+};
 
 module.exports = getTemperamentsFromAPI;
